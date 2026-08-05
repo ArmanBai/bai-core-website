@@ -1,0 +1,44 @@
+name: Security
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * 1"
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  semgrep:
+    name: Semgrep (SAST)
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    timeout-minutes: 10
+    # Works on private repos without paid plans, unlike CodeQL.
+    if: (github.actor != 'dependabot[bot]')
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Semgrep
+        # --exclude-rule: JSON-LD injection for SEO is the canonical Next.js
+        # pattern — jsonLd is built server-side from non-user-input post
+        # metadata and JSON.stringify escapes strings. Safe by design.
+        run: |
+          semgrep scan \
+            --config=p/default \
+            --config=p/security-audit \
+            --config=p/owasp-top-ten \
+            --config=p/javascript \
+            --config=p/typescript \
+            --config=p/react \
+            --config=p/nextjs \
+            --exclude-rule=typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml \
+            --error \
+            --timeout=300

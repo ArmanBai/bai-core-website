@@ -1,0 +1,47 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: "Asia/Almaty"
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      next:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+      i18n:
+        patterns:
+          - "next-intl"
+      content:
+        patterns:
+          - "next-mdx-remote"
+          - "remark-*"
+          - "rehype-*"
+          - "shiki"
+      lint-types:
+        patterns:
+          - "eslint*"
+          - "@types/*"
+          - "typescript"
+          - "prettier"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    labels:
+      - dependencies
+      - ci

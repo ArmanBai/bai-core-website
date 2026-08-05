@@ -1,0 +1,93 @@
+---
+title: "Индексы в Postgres, которые реально ускоряют выборку"
+excerpt: "B-tree, GIN, BRIN - когда какой использовать и как не облажаться с составными индексами."
+category: "Database"
+date: "2026-04-12"
+readMin: 8
+author: "BAI Core"
+cover: "indigo-cyan"
+coverImage: "/blog/postgres-indexes.jpg"
+tags: ["postgres", "performance", "indexes"]
+---
+
+Постгрес - база, в которую любят закидывать JSON, массивы, строки-миллионники и потом удивляться, почему медленно. В 9 из 10 случаев проблема - неправильные индексы или их отсутствие. Разберём три семейства, которые покрывают 95% задач.
+
+## B-tree: универсальная рабочая лошадка
+
+Это дефолтный индекс. Хорош для равенства, `<`, `>`, `BETWEEN`, `ORDER BY`. Плох для паттерна `LIKE '%foo%'` и полнотекстового поиска.
+
+```sql
+-- Быстрый поиск по email
+CREATE INDEX idx_users_email ON users (email);
+
+-- Для ORDER BY created_at DESC - направление имеет значение
+CREATE INDEX idx_lots_created_at_desc
+  ON lots (created_at DESC);
+```
+
+<Callout type="warn" title="Составной индекс - порядок важен">
+`CREATE INDEX ON table (a, b, c)` работает для фильтров `(a)`, `(a, b)`, `(a, b, c)`.
+Но **не** работает для `(b)` или `(b, c)` без `a`. Это самая частая ошибка - думают
+что индекс «на все случаи».
+</Callout>
+
+## GIN: когда данные внутри данных
+
+Для `jsonb`, массивов, `tsvector` (полнотекст).
+
+```sql
+-- Ищем лоты, где в tags есть 'urgent'
+CREATE INDEX idx_lots_tags ON lots USING GIN (tags);
+
+-- Ищем по ключу внутри jsonb-поля metadata
+CREATE INDEX idx_lots_metadata ON lots USING GIN (metadata jsonb_path_ops);
+```
+
+`jsonb_path_ops` компактнее дефолтного `jsonb_ops`, но поддерживает только оператор `@>`. В 90% случаев этого достаточно.
+
+## BRIN: гигантские таблицы по времени
+
+Block Range INdex. Микроскопический по размеру, но работает только если данные **физически упорядочены** (обычно - по `created_at` в append-only таблицах).
+
+```sql
+CREATE INDEX idx_events_created_at_brin
+  ON events USING BRIN (created_at);
+```
+
+Когда 100M строк логов - B-tree займёт гигабайты, BRIN - мегабайты. При фильтре `WHERE created_at > now() - interval '1 day'` Postgres прочтёт только нужный диапазон блоков.
+
+## Как проверить, что индекс реально работает
+
+```sql
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM lots
+WHERE status = 'active' AND created_at > now() - interval '7 days'
+ORDER BY created_at DESC
+LIMIT 50;
+```
+
+Смотрите на:
+
+- **Index Scan** vs **Seq Scan** - последнее значит, что индекс не подошёл.
+- **Buffers: shared read=N** - если много read'ов, база не помещается в RAM.
+- **actual time=X..Y** - реальное время (запустите 3 раза, берите последнее).
+
+<Callout type="success" title="Чеклист перед деплоем">
+- [ ] Все `WHERE`-фильтры покрыты индексом
+- [ ] Порядок колонок в составном индексе от самой селективной
+- [ ] Нет индексов на низкокардинальных полях (`is_active` с двумя значениями)
+- [ ] Нет дубликатов индексов (проверьте через `pg_indexes`)
+</Callout>
+
+## Вывод
+
+Индексы - это trade-off между скоростью чтения и весом/скоростью записи. Добавляйте по метрикам, удаляйте неиспользуемые:
+
+```sql
+SELECT schemaname, relname, indexrelname, idx_scan
+FROM pg_stat_user_indexes
+WHERE idx_scan = 0
+ORDER BY pg_relation_size(indexrelid) DESC;
+```
+
+Любой индекс с `idx_scan = 0` в проде - кандидат на удаление.

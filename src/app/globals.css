@@ -1,0 +1,508 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Full font-family stacks so Tailwind's `font-sans` / `font-mono`
+     utilities get proper fallbacks. Most important: the mono stack
+     falls back to Inter (which has full Kazakh coverage via
+     cyrillic-ext) before landing on a system monospace — that's
+     what was causing "ұ" in "Жұмыстарды" to render in Consolas/
+     Courier and look heavier than the rest of the word. */
+  --font-sans: var(--font-sans-var), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-mono-var), var(--font-sans-var), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-electric: var(--electric);
+  --color-circuit: var(--circuit);
+  --color-plasma: var(--plasma);
+  --color-data: var(--data);
+
+  --radius-xs: calc(var(--radius) * 0.4);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+/* -------------------------------------------------------------- */
+/*  Dark by default - IT-studio vibe                              */
+/* -------------------------------------------------------------- */
+:root,
+.dark {
+  /* Surfaces - lifted from pure black for visual depth */
+  --background: oklch(0.12 0.025 265);           /* #0c0d1c - deep navy with life */
+  --foreground: oklch(0.97 0.005 260);
+  --card: oklch(0.16 0.028 265);
+  --card-foreground: oklch(0.97 0.005 260);
+  --popover: oklch(0.17 0.03 265);
+  --popover-foreground: oklch(0.97 0.005 260);
+
+  /* Electric cyan - main accent (circuit traces) */
+  --primary: oklch(0.72 0.18 215);
+  --primary-foreground: oklch(0.12 0.025 265);
+
+  /* Plasma violet - secondary accent (glow / highlights) */
+  --secondary: oklch(0.24 0.04 265);
+  --secondary-foreground: oklch(0.97 0.005 260);
+
+  --muted: oklch(0.2 0.03 265);
+  --muted-foreground: oklch(0.65 0.02 260);
+  --accent: oklch(0.24 0.04 265);
+  --accent-foreground: oklch(0.97 0.005 260);
+
+  /* Semantic */
+  --destructive: oklch(0.68 0.22 22);
+  --success: oklch(0.72 0.18 150);               /* emerald pulse */
+  --warning: oklch(0.78 0.16 65);
+  --info: oklch(0.72 0.17 230);
+
+  /* Borders */
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.72 0.18 215);
+
+  /* Brand - named */
+  --electric: oklch(0.72 0.18 215);              /* cyan */
+  --circuit: oklch(0.65 0.2 285);                /* indigo/violet */
+  --plasma: oklch(0.7 0.22 310);                 /* violet/magenta */
+  --data: oklch(0.75 0.18 150);                  /* emerald */
+
+  --radius: 0.75rem;
+}
+
+/* -------------------------------------------------------------- */
+/*  Light mode - kept for a11y, but primary experience is dark    */
+/* -------------------------------------------------------------- */
+.light {
+  --background: oklch(0.99 0.003 260);
+  --foreground: oklch(0.15 0.025 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.025 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.025 265);
+
+  /* Primary darkened: 0.55 → 0.48 lifts white-text contrast from ~4.1 to ~5.4 */
+  --primary: oklch(0.48 0.22 215);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.014 260);
+  --secondary-foreground: oklch(0.22 0.04 265);
+
+  --muted: oklch(0.94 0.014 260);
+  /* Muted-fg darkened: 0.5 → 0.42 lifts contrast from ~4.1 to ~5.6 (WCAG AA clean) */
+  --muted-foreground: oklch(0.42 0.025 260);
+  --accent: oklch(0.95 0.014 260);
+  --accent-foreground: oklch(0.22 0.04 265);
+
+  --destructive: oklch(0.52 0.24 27);
+  --success: oklch(0.55 0.17 150);
+  --warning: oklch(0.6 0.17 65);
+  --info: oklch(0.55 0.17 230);
+
+  --border: oklch(0.88 0.01 260);
+  --input: oklch(0.88 0.01 260);
+  --ring: oklch(0.48 0.22 215);
+
+  --electric: oklch(0.48 0.22 215);
+  --circuit: oklch(0.45 0.23 285);
+  --plasma: oklch(0.5 0.25 310);
+  --data: oklch(0.55 0.17 150);
+}
+
+/* -------------------------------------------------------------- */
+/*  Light-mode hardening                                          */
+/*  Components were originally built with hardcoded white/X tints */
+/*  for dark surfaces. In light mode, rewrite those to use the    */
+/*  theme's foreground color so borders/surfaces stay visible.    */
+/* -------------------------------------------------------------- */
+.light {
+  /* Neutralise pure-white tints which become invisible on light bg */
+  --tw-bg-white-02: oklch(0.17 0.02 265 / 0.025);
+  --tw-bg-white-03: oklch(0.17 0.02 265 / 0.035);
+  --tw-bg-white-04: oklch(0.17 0.02 265 / 0.05);
+  --tw-bg-white-05: oklch(0.17 0.02 265 / 0.06);
+  --tw-border-white-10: oklch(0.17 0.02 265 / 0.12);
+  --tw-border-white-20: oklch(0.17 0.02 265 / 0.18);
+}
+
+.light [class*="bg-white/[0.02]"] { background-color: var(--tw-bg-white-02); }
+.light [class*="bg-white/[0.03]"] { background-color: var(--tw-bg-white-03); }
+.light [class*="bg-white/[0.04]"] { background-color: var(--tw-bg-white-04); }
+.light [class*="bg-white/[0.05]"] { background-color: var(--tw-bg-white-05); }
+.light [class*="border-white/10"] { border-color: var(--tw-border-white-10); }
+.light [class*="border-white/20"] { border-color: var(--tw-border-white-20); }
+
+/* Gradient text - in dark mode uses bright colors (0.72-0.85 L) which become
+   invisible on light bg. Override with dark gradient for readable headings. */
+.light .text-gradient-electric {
+  background-image: linear-gradient(
+    120deg,
+    oklch(0.42 0.22 215) 0%,
+    oklch(0.4 0.24 265) 50%,
+    oklch(0.42 0.24 310) 100%
+  );
+}
+.light .text-gradient-cyan {
+  background-image: linear-gradient(120deg, oklch(0.42 0.22 215), oklch(0.4 0.22 240));
+}
+
+/* Grid / dots - dark mode draws faint white lines; on white bg they vanish.
+   Swap to dark lines at similar opacity. */
+.light .bg-grid {
+  background-image:
+    linear-gradient(oklch(0.15 0.025 265 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.15 0.025 265 / 0.06) 1px, transparent 1px);
+}
+.light .bg-grid-dense {
+  background-image:
+    linear-gradient(oklch(0.15 0.025 265 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.15 0.025 265 / 0.07) 1px, transparent 1px);
+}
+.light .bg-dots {
+  background-image: radial-gradient(oklch(0.15 0.025 265 / 0.12) 1px, transparent 1px);
+}
+
+/* Glass surfaces - dark tinted glass on dark bg works, but on light bg the
+   near-black 72% opacity tint turns into a muddy slab. Use light-tinted glass. */
+.light .glass {
+  background-color: oklch(1 0 0 / 0.7);
+  border-color: oklch(0.15 0.025 265 / 0.12);
+}
+.light .glass-strong {
+  background-color: oklch(1 0 0 / 0.88);
+  border-color: oklch(0.15 0.025 265 / 0.14);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  html {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    color-scheme: dark;
+  }
+  html.light {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground;
+    letter-spacing: -0.01em;
+    /* Ambient global gradient. No fixed attachment (kills scroll perf on large viewports). */
+    background-image:
+      radial-gradient(ellipse at 0% 0%, oklch(0.5 0.2 265 / 0.08), transparent 55%),
+      radial-gradient(ellipse at 100% 100%, oklch(0.55 0.2 215 / 0.06), transparent 55%);
+    background-repeat: no-repeat;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  /* Selection - electric */
+  ::selection {
+    background-color: oklch(0.72 0.18 215 / 0.25);
+    color: var(--foreground);
+  }
+
+  /* Scrollbar - thin + glow */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.72 0.18 215 / 0.15);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.72 0.18 215 / 0.35);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* a11y: visible focus ring for keyboard users across all interactives.
+     Tailwind utilities override per-component where needed. */
+  :focus-visible {
+    outline: 2px solid oklch(0.72 0.18 215 / 0.9);
+    outline-offset: 2px;
+    border-radius: 0.375rem;
+  }
+}
+
+/* -------------------------------------------------------------- */
+/*  Utilities                                                     */
+/* -------------------------------------------------------------- */
+
+@layer utilities {
+  /* Fluid typography - calibrated for 1366-1920 laptops without overshooting */
+  .text-display {
+    font-size: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  .text-hero {
+    font-size: clamp(1.875rem, 1.25rem + 2.1vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+  }
+  .text-h1 {
+    font-size: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+  }
+  .text-h2 {
+    font-size: clamp(1.375rem, 1rem + 1.2vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+  }
+  .text-h3 { @apply text-xl sm:text-2xl font-semibold; }
+  .text-caption { @apply text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground; }
+  .text-num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+  .font-mono-tight { font-family: var(--font-mono); letter-spacing: -0.01em; }
+
+  /* Kazakh has a few Cyrillic-extended letters (ұ, ө, ә, ғ, қ, ң, і, ү, һ)
+     that JetBrains Mono renders at a slightly heavier weight than the
+     surrounding Latin/Cyrillic-basic letters. That looks ugly on display-
+     size mono-styled buttons ("Жұмыстарды көру"). Swap the terminal-
+     variant button to sans on KZ only — we keep the border/colour
+     treatment, just trade the mono glyphs for uniform Inter ones. */
+  :lang(kk) .btn-terminal {
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
+  }
+
+  /* Fluid container padding - min 1rem, max 2.5rem */
+  .container-x { padding-left: clamp(1rem, 3.5vw, 2.5rem); padding-right: clamp(1rem, 3.5vw, 2.5rem); }
+
+  /* Gradient text */
+  .text-gradient-electric {
+    background-image: linear-gradient(
+      120deg,
+      oklch(0.8 0.14 215) 0%,
+      oklch(0.78 0.2 260) 50%,
+      oklch(0.72 0.22 310) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-cyan {
+    background-image: linear-gradient(120deg, oklch(0.85 0.14 215), oklch(0.78 0.18 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-electric {
+    background-image: linear-gradient(
+      135deg,
+      oklch(0.55 0.2 215) 0%,
+      oklch(0.5 0.22 265) 50%,
+      oklch(0.55 0.24 310) 100%
+    );
+  }
+
+  /* Circuit mesh background */
+  .bg-circuit {
+    background-color: var(--background);
+    background-image:
+      radial-gradient(at 15% 10%, oklch(0.55 0.2 215 / 0.15) 0, transparent 50%),
+      radial-gradient(at 85% 20%, oklch(0.55 0.22 285 / 0.12) 0, transparent 50%),
+      radial-gradient(at 50% 90%, oklch(0.58 0.24 310 / 0.1) 0, transparent 50%);
+  }
+
+  /* Grid pattern (subtle) */
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-dense {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Mask helpers for edge fades */
+  .mask-radial-fade {
+    mask-image: radial-gradient(ellipse at 50% 50%, black 35%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 35%, transparent 80%);
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  }
+
+  /* Glass */
+  .glass {
+    @apply backdrop-blur-xl border;
+    background-color: oklch(0.14 0.025 265 / 0.72);
+    border-color: oklch(1 0 0 / 0.08);
+  }
+  .glass-strong {
+    @apply backdrop-blur-2xl border;
+    background-color: oklch(0.14 0.025 265 / 0.86);
+    border-color: oklch(1 0 0 / 0.1);
+  }
+
+  /* Glow ring */
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px oklch(0.72 0.18 215 / 0.25),
+      0 10px 40px -10px oklch(0.72 0.18 215 / 0.45);
+  }
+  .glow-ring-lg {
+    box-shadow:
+      0 0 0 1px oklch(0.72 0.18 215 / 0.4),
+      0 20px 80px -10px oklch(0.72 0.18 215 / 0.8);
+  }
+  .glow-text {
+    text-shadow: 0 0 24px oklch(0.72 0.18 215 / 0.5);
+  }
+
+  /* Card hover */
+  .card-hover {
+    @apply transition-[transform,box-shadow,border-color] duration-300 ease-out;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5 border-primary/40;
+    box-shadow: 0 20px 50px -20px oklch(0.72 0.18 215 / 0.3);
+  }
+
+  /* Animations */
+  .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+  .animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .animate-scale-in { animation: scaleIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.72 0.18 215 / 0.25) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  .animate-pulse-soft { animation: pulseSoft 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+  .animate-spin-slow { animation: spin 20s linear infinite; }
+
+  /* Trace pulse - for circuit-board style lines */
+  .animate-trace {
+    stroke-dasharray: 4 200;
+    animation: trace 4s linear infinite;
+  }
+
+  /* Status dot with pulse */
+  .status-dot {
+    @apply relative inline-flex h-2 w-2 rounded-full;
+  }
+  .status-dot::before {
+    content: "";
+    @apply absolute inset-0 rounded-full opacity-75;
+    animation: pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    background: currentColor;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes pingSlow {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+@keyframes trace {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

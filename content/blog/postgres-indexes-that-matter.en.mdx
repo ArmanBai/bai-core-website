@@ -1,0 +1,93 @@
+---
+title: "Postgres indexes that actually speed up your queries"
+excerpt: "B-tree, GIN, BRIN - when to reach for which, and how not to shoot yourself in the foot with composite indexes."
+category: "Database"
+date: "2026-04-12"
+readMin: 8
+author: "BAI Core"
+cover: "indigo-cyan"
+coverImage: "/blog/postgres-indexes.jpg"
+tags: ["postgres", "performance", "indexes"]
+---
+
+Postgres is the database everyone loves to throw JSON, arrays, and million-row tables into - and then wonders why it's slow. In 9 out of 10 cases the problem is the wrong indexes, or missing ones. Here are the three families that cover 95% of real-world needs.
+
+## B-tree: the universal workhorse
+
+This is the default index. Great for equality, `<`, `>`, `BETWEEN`, `ORDER BY`. Useless for `LIKE '%foo%'` and full-text search.
+
+```sql
+-- Fast lookup by email
+CREATE INDEX idx_users_email ON users (email);
+
+-- For ORDER BY created_at DESC - direction matters
+CREATE INDEX idx_lots_created_at_desc
+  ON lots (created_at DESC);
+```
+
+<Callout type="warn" title="Composite index - column order matters">
+`CREATE INDEX ON table (a, b, c)` works for filters `(a)`, `(a, b)`, `(a, b, c)`.
+But **not** for `(b)` or `(b, c)` without `a`. This is the most common mistake -
+people assume one composite index covers every combination.
+</Callout>
+
+## GIN: when data lives inside data
+
+For `jsonb`, arrays, `tsvector` (full-text).
+
+```sql
+-- Look up lots where tags contain 'urgent'
+CREATE INDEX idx_lots_tags ON lots USING GIN (tags);
+
+-- Search by a key inside a jsonb field
+CREATE INDEX idx_lots_metadata ON lots USING GIN (metadata jsonb_path_ops);
+```
+
+`jsonb_path_ops` is smaller than the default `jsonb_ops`, but only supports the `@>` operator. In 90% of cases that's all you need.
+
+## BRIN: huge time-series tables
+
+Block Range INdex. Microscopic in size, but only works if the data is **physically ordered** (usually by `created_at` in append-only tables).
+
+```sql
+CREATE INDEX idx_events_created_at_brin
+  ON events USING BRIN (created_at);
+```
+
+On a 100M-row log table, a B-tree takes gigabytes; BRIN takes megabytes. For `WHERE created_at > now() - interval '1 day'`, Postgres only reads the relevant block range.
+
+## How to check the index is actually used
+
+```sql
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM lots
+WHERE status = 'active' AND created_at > now() - interval '7 days'
+ORDER BY created_at DESC
+LIMIT 50;
+```
+
+Look for:
+
+- **Index Scan** vs **Seq Scan** - the latter means the index isn't being picked up.
+- **Buffers: shared read=N** - a lot of reads means the working set doesn't fit in RAM.
+- **actual time=X..Y** - real runtime (run it three times and take the last one).
+
+<Callout type="success" title="Pre-deploy checklist">
+- [ ] Every `WHERE` filter is covered by an index
+- [ ] Composite-index column order starts with the most selective column
+- [ ] No indexes on low-cardinality fields (e.g. `is_active` with two values)
+- [ ] No duplicate indexes (check `pg_indexes`)
+</Callout>
+
+## Takeaway
+
+Indexes are a trade-off between read speed and write weight/speed. Add them based on metrics, drop the unused ones:
+
+```sql
+SELECT schemaname, relname, indexrelname, idx_scan
+FROM pg_stat_user_indexes
+WHERE idx_scan = 0
+ORDER BY pg_relation_size(indexrelid) DESC;
+```
+
+Any index with `idx_scan = 0` in prod is a candidate for deletion.

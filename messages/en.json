@@ -1,0 +1,1405 @@
+{
+  "meta": {
+    "title": "BAI Core - IT solutions and business automation",
+    "description": "BAI CORE LLP builds SaaS products, automates business processes, and creates internal accounting and analytics systems for companies in Kazakhstan."
+  },
+  "a11y": {
+    "navigation": "Navigation",
+    "sectionLink": "Section link",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "skipToContent": "Skip to content"
+  },
+  "tenderCrmPreview": {
+    "statActive": "Active",
+    "statWinRate": "Win-rate",
+    "statProfit": "Profit",
+    "statMargin": "Margin",
+    "lot1": "Server hardware",
+    "lot2": "School supplies",
+    "lot3": "Construction materials"
+  },
+  "company": {
+    "name": "BAI Core",
+    "tagline": "IT solutions and business automation",
+    "city": "Astana, Kazakhstan",
+    "phoneHint": "consultations"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "howWeWork": "How we work",
+    "cases": "Cases",
+    "projects": "Projects",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contacts": "Contact"
+  },
+  "cta": {
+    "discuss": "Discuss a project",
+    "startFree": "Start free",
+    "viewWorks": "View works",
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "sendRequest": "Send"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies",
+    "rights": "All rights reserved",
+    "madeIn": "Made in Kazakhstan",
+    "operational": "systems: operational",
+    "astanaHubLabel": "Astana Hub resident",
+    "astanaHubCaption": "Member of the international IT-startups technopark",
+    "newsletter": {
+      "eyebrow": "Newsletter",
+      "title": "Technical articles every two weeks - no spam",
+      "description": "We write about what we do: architecture, cases, retrospectives."
+    }
+  },
+  "form": {
+    "categoryLabel": "Request type",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "optional": "optional",
+    "required": "*",
+    "success": "Request sent. We'll reply within 4 business hours.",
+    "sending": "Sending...",
+    "submit": "Send",
+    "companyPlaceholder": "Company name",
+    "placeholder": {
+      "name": "How should we address you",
+      "email": "you@company.com",
+      "company": "Acme Inc.",
+      "message": "Describe your task or question..."
+    },
+    "hint": "Briefly: task, timeline, what you've tried",
+    "consent": "By clicking Send, you agree to the processing of personal data.",
+    "errors": {
+      "captchaRequired": "Complete the CAPTCHA below the form",
+      "submitFailed": "Failed to send",
+      "generic": "Error"
+    },
+    "category": {
+      "development": "Product development",
+      "consulting": "IT consulting",
+      "career": "Career / job",
+      "partnership": "Partnership",
+      "other": "Other"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "New articles and case studies - every two weeks",
+    "description": "No spam, no marketing blasts. Just engineering and real-world problems. Unsubscribe with one click.",
+    "placeholder": "you@company.com",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "subscribed": "Subscribed",
+    "confirmEmail": "Check your inbox - we sent a confirmation email.",
+    "errorFallback": "Subscription error"
+  },
+  "home": {
+    "hero": {
+      "badge": "BAI Core · Astana, Kazakhstan",
+      "headlinePre": "We build",
+      "headlineAccent": "digital infrastructure",
+      "headlinePost": "for business.",
+      "subtitle": "We build SaaS products, internal systems and automation for small and mid-sized businesses: from MVPs and customer portals to BI dashboards and fully-operational back-office systems.",
+      "ctaDiscuss": "Discuss a project",
+      "ctaViewWorks": "See our work",
+      "sellingFacts": {
+        "contract": "We work under LLP contracts",
+        "payment": "Milestone payments with a clear scope",
+        "scope": "From MVP to production support",
+        "focus": "Focus: B2B and internal systems"
+      },
+      "suitableFor": "Fits distribution, services, tender teams, internal operations and SaaS startups at the MVP stage.",
+      "scroll": "Scroll"
+    },
+    "manifesto": {
+      "eyebrow": "Manifesto",
+      "headingPre": "Processes that",
+      "headingAccent": "don't rely on specific people",
+      "description": "We help companies move from scattered spreadsheets, chats and manual controls to systems where processes are captured, data is measurable, and management doesn't depend on any single person.",
+      "highlights": {
+        "code": "Code, not slides",
+        "systems": "Systems, not files",
+        "data": "Data, not guessing",
+        "metrics": "Metrics, not intuition"
+      },
+      "codeFile": "company.mission.ts",
+      "codeComment": "How digitalization actually works",
+      "codeValues": {
+        "source": "Excel + chats + manual control",
+        "pain": "no record, everything on people",
+        "process": "captured automatically",
+        "dataResult": "measured on dashboards",
+        "mgmt": "independent of people"
+      }
+    },
+    "services": {
+      "eyebrow": "Services",
+      "heading": "What we take on",
+      "description": "We take on either a dedicated product or a specific business task: automating a process, building an internal system, launching a SaaS, or setting up analytics.",
+      "cardCta": "Discuss a task",
+      "footerCta": "See which format fits you",
+      "items": {
+        "saas": {
+          "title": "SaaS products",
+          "description": "Cloud services with paid subscriptions, customer portals, APIs and analytics - from idea to production deploy."
+        },
+        "automation": {
+          "title": "Automation",
+          "description": "Business-process automation: documents, notifications, integrations. From Zapier to custom pipelines."
+        },
+        "internal": {
+          "title": "Internal systems",
+          "description": "CRMs, ERPs, internal dashboards and admin panels - shaped to your process, not the other way around."
+        },
+        "bi": {
+          "title": "BI and analytics",
+          "description": "Dashboards, metrics, A/B tests. From Metabase to custom real-time analytics."
+        }
+      }
+    },
+    "products": {
+      "eyebrow": "Our products",
+      "headingPre": "Flagship product -",
+      "headingAccent": "TenderCRM",
+      "description": "We don't just ship websites - we build full systems. TenderCRM is a living example of how we work: from a business problem to production, with real customers and real load.",
+      "tagline": "A tender-management system for companies working with Kazakhstan public procurement.",
+      "valueLines": {
+        "oneWindow": "All tenders from 20+ platforms in one window",
+        "margin": "Per-lot margin calculated automatically",
+        "team": "The team works in a single system, not in spreadsheets and chats"
+      },
+      "audienceLabel": "For whom",
+      "audienceText": "Distributors, tender teams, SMBs with a public-procurement sales unit",
+      "buyerLabel": "Who pays",
+      "buyerText": "The owner or commercial director who is tired of the Excel chaos",
+      "insideLabel": "What's inside",
+      "insideItems": {
+        "ai": "AI parsing of tender docs in 3 seconds",
+        "multiTenant": "Multi-tenant with RLS isolation",
+        "taxRegimes": "All 6 Kazakhstan tax regimes",
+        "roles": "Roles: admin / manager / viewer",
+        "platforms": "20+ public-procurement platforms",
+        "analytics": "Analytics and dashboards",
+        "marginCalc": "Automatic margin calculation",
+        "auditLog": "Audit log of every action"
+      },
+      "openLabel": "Open",
+      "caseStudy": "Full case study",
+      "liveLabel": "Live"
+    },
+    "process": {
+      "eyebrow": "Process",
+      "headingPre": "How we",
+      "headingAccent": "turn an idea into a product",
+      "description": "We lock down phases, deliverables and payment points up front. You see progress while the project runs - not just at the end.",
+      "stepLabel": "STEP",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "text": "We study the business, frame the task, define success metrics. We leave with a clear scope and price.",
+          "tag": "1-2 weeks"
+        },
+        "design": {
+          "title": "Design & Prototype",
+          "text": "Architecture, DB schemas, UI/UX mockups, interactive prototype. You see the product before the code.",
+          "tag": "2-3 weeks"
+        },
+        "build": {
+          "title": "Build",
+          "text": "We write the code: SSR, tests, CI/CD. Weekly demos - you see progress and can course-correct.",
+          "tag": "4-12 weeks"
+        },
+        "ship": {
+          "title": "Ship & Support",
+          "text": "Deploy, team training, support SLA. We don't disappear - we keep evolving the product.",
+          "tag": "Ongoing"
+        }
+      }
+    },
+    "techMarquee": {
+      "caption": "Technologies we work with"
+    },
+    "latestArticles": {
+      "eyebrow": "Blog",
+      "heading": "We write about what we do",
+      "description": "Technical breakdowns, hands-on case studies, notes on the Kazakhstan IT market.",
+      "allArticles": "All articles"
+    },
+    "finalCta": {
+      "badge": "Accepting new projects",
+      "headingPre": "Got a task in mind?",
+      "headingAccent": "Let's turn it into a working product",
+      "description": "A free 30-minute discovery - we discuss the task, show references, estimate cost and timeline.",
+      "ctaDiscuss": "Discuss a project",
+      "replyTime": "We typically reply within 4 business hours"
+    }
+  },
+  "about": {
+    "metadata": {
+      "title": "About",
+      "description": "BAI Core - a team of developers and analysts in Astana. We build IT solutions for businesses in Kazakhstan."
+    },
+    "hero": {
+      "eyebrow": "About",
+      "titlePre": "A team that builds",
+      "titleAccent": "IT infrastructure",
+      "titlePost": "for business in Kazakhstan",
+      "description": "We're not an outsourcing shop and not an agency. We're a product team that builds our own SaaS and, in parallel, helps clients close real pain points - from manual Excel processes to full-scale platforms.",
+      "breadcrumb": "About"
+    },
+    "mission": {
+      "eyebrow": "Mission",
+      "headingPre": "Make technology",
+      "headingAccent": "approachable",
+      "headingPost": "for Kazakhstan business.",
+      "text1": "In 2026 every business is essentially an IT company: databases, integrations, analytics. But 90% of companies in Kazakhstan still run on Excel, WhatsApp and paper spreadsheets. We help make that transition - without agency price tags and six-year projects.",
+      "text2": "Our approach: short iterations, transparent pricing, code and documentation that stay with you, a focus on business metrics."
+    },
+    "values": {
+      "eyebrow": "Values",
+      "heading": "What we believe in",
+      "items": {
+        "result": {
+          "title": "Outcomes, not reports",
+          "text": "We measure success by hours saved and profit added, not by lines of code."
+        },
+        "speed": {
+          "title": "Ship speed",
+          "text": "First working version in 2-4 weeks. We iterate on live data, not hypotheses."
+        },
+        "security": {
+          "title": "Security by default",
+          "text": "DB-level RLS, 2FA, auditing, encryption at rest and in transit. From the first commit."
+        },
+        "longterm": {
+          "title": "Built for the long haul",
+          "text": "Clean architecture and tests. Three years on, your code is easy to maintain - not to rewrite."
+        }
+      }
+    },
+    "facts": {
+      "eyebrow": "By the numbers",
+      "headingPre": "How we work,",
+      "headingAccent": "measurably",
+      "items": {
+        "products": "Products in production",
+        "tech": "Technologies in the stack",
+        "testing": "Test coverage",
+        "uptime": "Uptime SLA"
+      }
+    },
+    "team": {
+      "eyebrow": "Founder",
+      "headingPre": "One person owns every project -",
+      "headingAccent": "no intermediaries, no extra layers",
+      "description": "For any project question you talk directly to me. I run the project from the first meeting through launch and I'm personally accountable for the result.",
+      "founders": {
+        "arman": {
+          "name": "Arman",
+          "role": "Founder · CEO",
+          "bio": "Owns the product and the client side. Runs first meetings, shapes scope, is accountable for timelines and quality. Speaks business language, not framework talk."
+        }
+      },
+      "badges": {
+        "location": "Astana, Kazakhstan · we work remotely worldwide",
+        "composition": "Full cycle: from idea to launch",
+        "founded": "Founded in 2025"
+      }
+    }
+  },
+  "howWeWork": {
+    "metadata": {
+      "title": "How we work",
+      "description": "BAI Core methodology: principles, stage-by-stage process, communication, deliverables and boundaries. Transparent from discovery to support."
+    },
+    "hero": {
+      "eyebrow": "How we work",
+      "titlePre": "A methodology that",
+      "titleAccent": "doesn't depend on mood",
+      "description": "We work the same way whether it's an MVP or an enterprise project. Process, communication, deliverables - transparent from discovery to support.",
+      "breadcrumb": "How we work"
+    },
+    "principles": {
+      "eyebrow": "Principles",
+      "heading": "What our work stands on",
+      "description": "These aren't \"values on an office wall.\" These are rules we don't break - even when a client insists.",
+      "items": {
+        "transparency": {
+          "title": "Transparency over nice slides",
+          "text": "You see progress weekly: a live demo link, tasks, backlog, metrics. No \"everything's fine, we'll show at the end.\""
+        },
+        "metrics": {
+          "title": "Metrics, not intuition",
+          "text": "Every feature has a success criterion - measurable before and after release. If it can't be measured, we don't build it."
+        },
+        "code": {
+          "title": "Your code stays yours",
+          "text": "The repo is in your GitHub, infrastructure in your account. We leave - you continue without pauses."
+        },
+        "security": {
+          "title": "Security by default",
+          "text": "RLS, secrets in vault, CSP, rate-limit, Sentry, backups, audit log - from the first commit, not \"we'll add it later.\""
+        },
+        "no": {
+          "title": "Saying no when needed",
+          "text": "If a task is framed wrong or there's a simpler solution - we say so before kickoff. Better an hour of disagreement than a month of rework."
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "Process in detail",
+      "heading": "Four stages with clear deliverables",
+      "description": "For each stage it's clear: what we do, what you receive at the end, and what questions we need to discuss.",
+      "stageLabel": "STAGE",
+      "deliverablesLabel": "What you get",
+      "questionsLabel": "What we discuss",
+      "stages": {
+        "discovery": {
+          "title": "Discovery",
+          "duration": "1-2 weeks",
+          "summary": "We understand the task down to the detail. We leave with a document you could show to an investor.",
+          "deliverables": [
+            "\"As-is\" business-process map",
+            "Scope for MVP / first version",
+            "Architectural sketch (DB, services, integrations)",
+            "Success metrics and acceptance criteria",
+            "Cost, timeline, team"
+          ],
+          "questions": [
+            "What pain are we solving? Who feels it right now?",
+            "What do users do without the system - and why is that bad?",
+            "Which integrations are critical and which are \"nice to have\"?",
+            "What data already exists and where does it live?"
+          ]
+        },
+        "design": {
+          "title": "Design & Prototype",
+          "duration": "2-3 weeks",
+          "summary": "We design the architecture and UX. You see the product before we start writing code.",
+          "deliverables": [
+            "DB schema with migrations and seed data",
+            "API contracts (OpenAPI / tRPC)",
+            "Clickable prototype of key flows",
+            "Technical implementation plan by sprint"
+          ],
+          "questions": [
+            "What should we see in the first 10 seconds?",
+            "Which roles are needed? Where do their permissions overlap?",
+            "What's stored forever, and what can be archived?"
+          ]
+        },
+        "build": {
+          "title": "Build",
+          "duration": "4-12 weeks",
+          "summary": "We write code in two-week sprints. At the end of each - a working build in production.",
+          "deliverables": [
+            "Code in your GitHub repository with full history",
+            "Tests (unit + e2e on critical flows)",
+            "CI/CD: lint, typecheck, tests, automatic deploys",
+            "Observability: Sentry, logs, metrics",
+            "Documentation: README, ADRs on key decisions"
+          ],
+          "questions": [
+            "What do we take into the current sprint, what do we defer?",
+            "Which metric proves the feature worked?",
+            "What can we simplify without losing the point?"
+          ]
+        },
+        "launch": {
+          "title": "Launch & Support",
+          "duration": "Ongoing",
+          "summary": "We launch, train the team, hold the SLA. From there - evolution or handover to your people.",
+          "deliverables": [
+            "Production release with 24/7 monitoring",
+            "Incident-response playbook",
+            "Team training (live + recordings)",
+            "Runbook for routine operations",
+            "Roadmap for the next quarter"
+          ],
+          "questions": [
+            "What SLA do you actually need? 99.5% is fine, 99.99% is expensive.",
+            "Who on your team will replace us?",
+            "What do you want to add next quarter?"
+          ]
+        }
+      }
+    },
+    "communication": {
+      "eyebrow": "Communication",
+      "heading": "How we keep you in the loop",
+      "description": "We agree on the rhythm at kickoff. Typical setup below.",
+      "items": {
+        "slack": {
+          "title": "Slack / Telegram",
+          "detail": "Working chat. We reply during business hours - not in the evening, not on weekends."
+        },
+        "demo": {
+          "title": "Weekly demo call",
+          "detail": "30 minutes on Zoom/Meet: we show what's done, agree priorities for the next week."
+        },
+        "notion": {
+          "title": "Shared Notion / Linear",
+          "detail": "Tasks, roadmap, decisions. Always clear who's doing what and what's next."
+        },
+        "report": {
+          "title": "Report every two weeks",
+          "detail": "Short written summary: what's done, what's planned, risks, hours logged."
+        }
+      }
+    },
+    "expectations": {
+      "title": "What we need from you",
+      "description": "We're not a \"do it all yourselves\" vendor. The product turns out good only if you're involved.",
+      "items": [
+        "One product owner on your side - the person who makes priority calls.",
+        "Replies to questions within a business day, not 3 days.",
+        "Access to what's needed for the work (1C, CRM, DB) - not \"I'll send it by email on Friday.\"",
+        "Willingness to cut from scope anything that doesn't move the success metric."
+      ]
+    },
+    "boundaries": {
+      "title": "When we say no",
+      "description": "If a task isn't ours or will cause more harm than good - we say so before kickoff, not after.",
+      "items": {
+        "oneoff": {
+          "title": "One-off scripts with no follow-up",
+          "reason": "Our value is that we know how the product will live a year from now. A one-off thing is cheaper to hand to a freelancer."
+        },
+        "rescue": {
+          "title": "\"Fix the previous developer's code in 3 days\"",
+          "reason": "Without context this is blind repair. First an audit (1-2 weeks), then the call: fix or rewrite."
+        },
+        "shady": {
+          "title": "Crypto / gambling / grey schemes",
+          "reason": "Reputation and legal cleanliness matter to us. These just aren't our clients."
+        },
+        "urgent": {
+          "title": "\"By Monday\" deadlines pegged to someone else's deadline",
+          "reason": "We don't do firefighting - we do reliable. What burns now usually burns again, this time in your production."
+        }
+      }
+    },
+    "cta": {
+      "heading": "Ready to try?",
+      "description": "30-minute discovery call - free. By the end it's clear whether we fit each other and what to do next.",
+      "primary": "Book discovery",
+      "secondary": "See case studies"
+    }
+  },
+  "services": {
+    "page": {
+      "metadata": {
+        "title": "Services",
+        "description": "SaaS product development, process automation, internal systems, BI and IT consulting for businesses in Kazakhstan."
+      },
+      "heroEyebrow": "Services",
+      "heroTitlePre": "Five directions -",
+      "heroTitleAccent": "one quality bar",
+      "heroDescription": "Whether you need an MVP in four weeks or a full-scale ERP system - the process is the same: transparent scope, fixed price, weekly demos.",
+      "heroBreadcrumb": "Services",
+      "stackLabel": "Stack",
+      "includesLabel": "What's included",
+      "examplesLabel": "Examples",
+      "timelineLabel": "Timeline:",
+      "detailCta": "More about the service",
+      "discussCta": "Discuss a task"
+    },
+    "pricing": {
+      "eyebrow": "Ways to work",
+      "heading": "We pick the format to fit the task, not the other way around",
+      "description": "We quote a concrete price after discovery - a free 30-minute call where we understand the task and you decide if we're a fit.",
+      "featured": "Most popular",
+      "suitableLabel": "Fits",
+      "bottomNote": "We work under Kazakhstan contracts. For foreign companies - USD / EUR invoicing.",
+      "ctaDiscuss": "Discuss a task",
+      "formats": {
+        "fixed": {
+          "name": "Fixed project",
+          "tagline": "When the scope is clear and you want a known result by a known date",
+          "points": [
+            "Discovery: we lock scope, architecture, milestones",
+            "Payment against milestones, not upfront",
+            "At the end - a working product and documentation"
+          ],
+          "suitable": "MVPs, landing services, internal tools with a clear spec"
+        },
+        "sprints": {
+          "name": "Two-week sprints",
+          "tagline": "When the product is live and growing - and you want to hold tempo without restarts",
+          "points": [
+            "Every 2 weeks - demo and a production release",
+            "You drive backlog and priorities, we help choose",
+            "Stop at any time, no penalties"
+          ],
+          "suitable": "SaaS products, internal systems in the growth stage"
+        },
+        "partnership": {
+          "name": "Product partnership",
+          "tagline": "When you need not just a team, but a technical partner for the long run",
+          "points": [
+            "Architecture, security, infrastructure - our responsibility",
+            "Support, incidents, planning - 24/7",
+            "Quarterly roadmap sessions with a founder"
+          ],
+          "suitable": "Mature products, regulated industries, teams of 20+"
+        }
+      }
+    },
+    "items": {
+      "saas": {
+        "title": "SaaS product development",
+        "tagline": "Your own cloud service - from idea to paying customers",
+        "description": "We build end-to-end SaaS products for B2B and B2C: paid subscription, customer portal, API, analytics, admin panel. We work MVP-first - first working version in 4-6 weeks.",
+        "timeline": "4-12 weeks",
+        "includes": [
+          "Architecture + DB schema",
+          "Auth with email, OAuth, 2FA",
+          "Multi-tenant with RLS",
+          "Billing via Stripe / Kaspi",
+          "Public API + SDK",
+          "Admin panel for support"
+        ],
+        "useCases": [
+          "B2B SaaS for accounting / CRM",
+          "Two-sided marketplace",
+          "AI services on top of LLMs"
+        ],
+        "longDescription": [
+          "SaaS isn't just a website with a login. It's a product that has to earn money every month: billing doesn't break, one customer's data doesn't leak to another, support doesn't wake up to alerts at 3am. We build products like that - not prototypes that take months to drag into production.",
+          "We start MVP-first: pick the 2-3 core features users will actually pay for, and take them to production quality. Everything else waits - until the market confirms you're solving a real pain.",
+          "We design the architecture for growth from day one: multi-tenant with RLS, queues, cache, billing via Stripe or Kaspi. When you reach your first 100 customers, you won't need to rewrite from scratch."
+        ],
+        "phases": [
+          { "title": "MVP discovery", "description": "We cut from the idea everything that isn't needed before the first 10 customers.", "deliverable": "4-6 week scope + list of deferred features" },
+          { "title": "Architecture + skeleton", "description": "DB schema, auth, layout, billing skeleton. At this point you can already click through.", "deliverable": "First version deployed to a domain" },
+          { "title": "Core features", "description": "1-2 features per sprint. At the end of each - a working build in production.", "deliverable": "Weekly demos and releases" },
+          { "title": "Launching paid", "description": "We wire up billing, payment gateways, webhooks, tax logic.", "deliverable": "First paid invoice" }
+        ],
+        "notFor": [
+          "\"An Instagram clone for Kazakhstan\" with no clear business model",
+          "Products whose only edge is \"we're 10% cheaper\"",
+          "Projects without a person to make product decisions"
+        ],
+        "faqs": [
+          { "q": "Can we skip MVP and go straight to a \"full\" version?", "a": "You can, but it's more expensive and riskier. Without feedback from real users, half the features turn out unnecessary. We'd rather do 4 weeks to MVP + 8 weeks of iteration on real feedback than 16 weeks into the void." },
+          { "q": "Who owns the code?", "a": "You do, fully. The repo is created in your GitHub, infrastructure on your account. We get access as contributors, not owners." },
+          { "q": "Support after launch?", "a": "Under a separate agreement - hourly retainer or fixed monthly package. You can hand everything to your own team if you have one - we'll prep documentation and train them." },
+          { "q": "Do you work with Kaspi Pay?", "a": "Yes. We've integrated Kaspi on several projects, both for individuals and for B2B invoicing." }
+        ]
+      },
+      "automation": {
+        "title": "Process automation",
+        "tagline": "Less Excel, more process",
+        "description": "We turn routine into automated scenarios: document flows, notifications, cross-system integrations, reporting. From Zapier/n8n to custom Node.js pipelines.",
+        "timeline": "2-6 weeks",
+        "includes": [
+          "Process audit + AS-IS / TO-BE map",
+          "Integrations with CRM / 1C / bank",
+          "Automated reporting",
+          "Telegram / Email / WhatsApp notifications",
+          "Document generator (contracts, invoices)"
+        ],
+        "useCases": [
+          "Auto-invoice to the client after payment",
+          "Deadline and payment reminders",
+          "Warehouse and CRM sync"
+        ],
+        "longDescription": [
+          "90% of the routine inside companies is moving data from one system to another. A manager copies an order from CRM into 1C, accounting migrates invoices from email to Excel, an operator sends SMS to clients by hand. Every such operation is a source of errors and wasted time.",
+          "We don't replace your 1C, CRM or email - we connect them. Between systems sits an automation layer that moves data, generates documents, and pushes notifications 24/7. Your staff keep working in the familiar interfaces, they just no longer do by hand what webhooks can do.",
+          "We start simple: from Zapier/n8n for standard scenarios up to full Node.js pipelines for complex logic. We match the tool to the volume and criticality - so a year later you're not overpaying 10× for what you actually need."
+        ],
+        "phases": [
+          { "title": "Process audit", "description": "We sit with the people doing the work and note every step. We see where the hours go.", "deliverable": "AS-IS map with time metrics per step" },
+          { "title": "TO-BE design", "description": "We design the new process: what we automate, what stays with people.", "deliverable": "TO-BE diagram + integrations list" },
+          { "title": "Implementation", "description": "We configure n8n scenarios or write custom scripts. Covered by tests.", "deliverable": "A working process + failure monitoring" },
+          { "title": "Handover", "description": "We train one of your people to read logs and manage the scenarios.", "deliverable": "Runbook + video guide" }
+        ],
+        "notFor": [
+          "Scraping sites where that violates ToS or the law",
+          "Automating processes that are about to change - we stabilise the process manually first",
+          "Grey schemes to bypass payment systems or banking limits"
+        ],
+        "faqs": [
+          { "q": "Why not just hire another manager?", "a": "A manager costs 300-500k/month and works 8 hours a day. Automation is built once, works 24/7, and doesn't make mistakes. Payback is usually 1-3 months." },
+          { "q": "Do you know 1C?", "a": "Yes - 1C integrations via API/ObjectWriter or file export are a common task for us. We work with both stock and customised 1C installations." },
+          { "q": "What if the integration breaks?", "a": "We wire up Sentry + Slack/Telegram alerts on failures. You learn about the incident the same minute it happens, not a week later from your clients." }
+        ]
+      },
+      "internal": {
+        "title": "Internal systems",
+        "tagline": "CRM / ERP / admin panels - shaped to your process",
+        "description": "Off-the-shelf CRMs usually don't fit - you have to break the process to fit the tool. We do the opposite: build the tool around your unique process, with a role model and audit log.",
+        "timeline": "6-16 weeks",
+        "includes": [
+          "Multi-role (admin / manager / client)",
+          "Row-level security",
+          "Full audit log of actions",
+          "Import / export to Excel",
+          "Kanban / tables / cards",
+          "Mobile-adaptive"
+        ],
+        "useCases": [
+          "Internal CRM for the sales team",
+          "ERP for warehouse and logistics",
+          "Orders and documents tracking system"
+        ],
+        "longDescription": [
+          "Off-the-shelf CRMs and ERPs are a compromise: they do everything \"OK\" and nothing \"great.\" When you have a unique process (and every company that does something better than its competitors has one), the box starts to get in the way. You have to break the process, teach people to work \"the system's way,\" live with slow reports.",
+          "We build the system around you. Your roles aren't a canned \"manager/admin\" - they're your specific job titles with their specific permissions. Your customer cards carry the fields you actually need. Your reports show the metrics you measure, not the ones the box happens to support.",
+          "Mandatory elements - multi-role with row-level security (branches don't see each other's clients), a full audit log (who changed what and when), Excel import/export (to swap data with contractors), and mobile adaptation (for field teams working from a phone)."
+        ],
+        "phases": [
+          { "title": "Process map", "description": "We figure out how roles, permissions and data flows work today.", "deliverable": "Process document + DB schema" },
+          { "title": "Prototype", "description": "Clickable Figma prototype of the key screens. Signed off before any code.", "deliverable": "Prototype + approved screens" },
+          { "title": "Development", "description": "We build in sprints; every two weeks a working version you can test.", "deliverable": "Modules ship to production one by one" },
+          { "title": "Data migration", "description": "We move data from Excel / the old system with validation and reconciliation.", "deliverable": "Data in the new system, reconciled to source" }
+        ],
+        "notFor": [
+          "Rebuilding a boxed CRM \"exactly as it was, but ours\" - usually cheaper to train the team on the box",
+          "Systems for 2-3 users - Airtable/Notion often cover that for $0",
+          "Projects with no product owner empowered to make process decisions"
+        ],
+        "faqs": [
+          { "q": "Why not use a ready-made CRM - Bitrix/AmoCRM?", "a": "If your process fits the box, use the box - it's cheaper. We come in when the box gets in the way: unusual roles, complex reporting, 1C/bank integrations, security requirements SaaS doesn't meet." },
+          { "q": "And if we later want to move to a boxed solution?", "a": "We'll export the data in standard formats and help with migration. The code and data are yours - no lock-in." },
+          { "q": "How many roles can we set up?", "a": "Technically - as many as you want. In practice - past 6-7 it starts to get in the business's own way. We usually work out the role matrix separately." }
+        ]
+      },
+      "bi": {
+        "title": "BI and analytics",
+        "tagline": "From intuition to numbers",
+        "description": "We build dashboards, pull data from scattered sources, set up cohorts and A/B tests. You see not only what happened, but why.",
+        "timeline": "3-8 weeks",
+        "includes": [
+          "ETL pipeline from your systems",
+          "Unified data warehouse",
+          "Dashboards in Metabase / custom",
+          "Cohort analysis and retention",
+          "A/B test infrastructure",
+          "Alerts on key metrics"
+        ],
+        "useCases": [
+          "Management dashboard for the CEO",
+          "Sales funnels and retention",
+          "SaaS product analytics"
+        ],
+        "longDescription": [
+          "Inside a typical company, data lives in 5-10 places: CRM, 1C, ad platforms, Google Analytics, Excel reports from employees. To answer a simple \"which ad channel actually pays back,\" an analyst spends two days joining tables. By the end of the week the data is already stale.",
+          "We build an ETL pipeline that once a day (or in real time, if needed) pulls everything into a single warehouse. On top we put Metabase or custom dashboards - and the same questions get answered in 2 minutes instead of 2 days.",
+          "A separate strand of work is product analytics for SaaS: cohorts, retention, funnels. We help you see not just \"revenue dropped,\" but \"why users from the March cohort stopped coming back.\""
+        ],
+        "phases": [
+          { "title": "Source audit", "description": "We map every system that holds data and look at volumes and quality.", "deliverable": "Source registry + ETL plan" },
+          { "title": "Data warehouse", "description": "We build a single store: Postgres for small volumes, ClickHouse for large.", "deliverable": "Warehouse with historical backfill" },
+          { "title": "Dashboards", "description": "Metabase or custom dashboards tailored to your key metrics.", "deliverable": "3-5 dashboards for different roles" },
+          { "title": "Alerts", "description": "We wire up Slack/Telegram notifications when a metric goes out of range.", "deliverable": "Alerts on critical KPIs" }
+        ],
+        "notFor": [
+          "Projects with less than ~10k rows of data - Excel + pivot tables usually cover that",
+          "Scoring and ML models - that's a separate task, not BI; we take it only if you have no in-house DS team",
+          "Analytics on someone else's data (competitor scraping, etc.)"
+        ],
+        "faqs": [
+          { "q": "Metabase vs Power BI?", "a": "Metabase is faster and simpler for technical teams, open-source, can be hosted on-premise. Power BI is visually richer but tied to the Microsoft ecosystem. We use Metabase more often - but if you're already on MS, we can work with Power BI too." },
+          { "q": "Do we need a dedicated BI engineer?", "a": "During build - no, we do everything. After launch - depends on complexity. Often an analyst who can write SQL and work with Metabase is enough." },
+          { "q": "What about personal data?", "a": "We keep PII separate from the analytical warehouse, with anonymisation / hashing at the ETL stage. Compliance with Kazakhstan's personal-data laws is handled at the infrastructure level." }
+        ]
+      },
+      "consulting": {
+        "title": "IT consulting",
+        "tagline": "When you need to think, not to write",
+        "description": "Technical due diligence, architecture audit, stack selection, hiring the first IT employees. We help make the right call before it gets expensive.",
+        "timeline": "From 1 week",
+        "includes": [
+          "Current infrastructure audit",
+          "Digitalization roadmap",
+          "Stack and vendor selection",
+          "CTO / first engineer hiring",
+          "Security review + threat modeling"
+        ],
+        "useCases": [
+          "Before a major release / deal",
+          "When changing stack",
+          "Hiring the first IT team"
+        ],
+        "longDescription": [
+          "Sometimes the right answer to a task is not \"let's build it.\" Sometimes it's \"don't do this,\" or \"buy the existing product,\" or \"hire a CTO first.\" Those answers are hard to hear from a vendor who makes money on development - so consulting is a separate service for us, priced honestly by the hour, no upsell.",
+          "Typical situations: you're preparing for an M&A and need to audit the IT asset; you're thinking of switching stack and want the price tag; you want to hire your first IT lead but aren't sure how to evaluate candidates; your team is asking to rewrite the old system and you're not sure that's what's needed.",
+          "We don't sell development disguised as consulting. If after the audit the honest answer is \"nothing needs doing,\" that's what we'll say. If something does, we'll say what exactly, and give a market quote - not a discounted one that cross-sells our own work."
+        ],
+        "phases": [
+          { "title": "Intake", "description": "30-60 minutes to understand the question, propose a format and timeline.", "deliverable": "Audit plan + estimate" },
+          { "title": "Deep dive", "description": "Interviews with the team, review of code, infrastructure, processes.", "deliverable": "Artifacts: interviews, code review, architecture diagrams" },
+          { "title": "Report", "description": "A written document with findings, risks and a prioritised action plan.", "deliverable": "20-40 page report + presentation" },
+          { "title": "Follow-through", "description": "On request we help implement - or hand off to another vendor and validate their work.", "deliverable": "Active help or independent oversight" }
+        ],
+        "notFor": [
+          "\"Tell us whose code is better - ours or the vendor's\" without talking to both sides",
+          "Court expert testimony - we're not certified",
+          "Recommendations on jurisdictions or taxation - not our domain"
+        ],
+        "faqs": [
+          { "q": "How is it priced?", "a": "Hourly rate or a fixed audit package. We settle this at the intake call." },
+          { "q": "Isn't there a conflict of interest - you could also be the vendor?", "a": "On technical due diligence we decline further development for the same client, so the report is independent. For other consulting formats we agree upfront how that's handled." }
+        ]
+      }
+    },
+    "detailPage": {
+      "overviewLabel": "What this is",
+      "stackLabel": "Stack",
+      "includesLabel": "What's included",
+      "useCasesLabel": "Typical tasks",
+      "useCasesDescription": "The kind of requests that usually come in for this service.",
+      "phasesEyebrow": "How we work on this service",
+      "phasesHeading": "Four stages with clear deliverables",
+      "phasesDescription": "This breakdown is specific to this service - the general methodology lives on the \"How we work\" page.",
+      "stageLabel": "STAGE",
+      "deliverableLabel": "Deliverable",
+      "notForTitle": "When this isn't your task",
+      "notForDescription": "We don't take these cases under this service label - honestly, so you don't lose time.",
+      "faqEyebrow": "FAQ",
+      "faqHeading": "Common questions about this service",
+      "otherServicesEyebrow": "Other services",
+      "otherServicesHeading": "Four more directions",
+      "otherServicesCta": "Learn more",
+      "heroDiscussCta": "Discuss a task"
+    }
+  },
+  "cases": {
+    "metadata": {
+      "title": "Cases",
+      "description": "BAI Core client stories: what the task was, how we solved it, and what it gave the business in numbers."
+    },
+    "hero": {
+      "eyebrow": "Cases",
+      "titlePre": "Client tasks we",
+      "titleAccent": "turned into working systems",
+      "description": "For each case - what was the problem, what we did, and what the business got. Some clients are under NDA, so we don't name them, but the numbers and approach are real.",
+      "breadcrumb": "Cases"
+    },
+    "labels": {
+      "clientLabel": "Client",
+      "problemLabel": "Problem",
+      "approachLabel": "What we did",
+      "outcomeLabel": "Outcome",
+      "ndaBadge": "Under NDA - client name not disclosed",
+      "caseStudyCta": "Full breakdown"
+    },
+    "trustNote": {
+      "text": "On request we're happy to go deeper on any case - under an NDA if needed to compare against your task.",
+      "cta": "Request a similar case breakdown"
+    },
+    "items": {
+      "tendercrm-self": {
+        "client": "TenderCRM (our own product)",
+        "industry": "SaaS · Kazakhstan public procurement",
+        "timeline": "6 months discovery → live",
+        "problem": "Tender teams in Kazakhstan track 20+ platforms manually in Excel and chats. Margins are \"eyeballed,\" data gets lost, the team can't work in parallel.",
+        "approach": [
+          "Walked through the process with 4 different distributor companies",
+          "Designed a multi-tenant architecture with RLS isolation",
+          "Built AI parsing of tender docs on Claude API - instead of an hour of manual entry",
+          "All 6 Kazakhstan tax regimes, roles, audit log, analytics"
+        ],
+        "outcome": "Live in production with real customers. Became the flagship case we show to new clients.",
+        "metrics": [
+          { "value": "3 sec", "label": "doc parsing" },
+          { "value": "20+", "label": "platforms in one window" },
+          { "value": "< 5 min", "label": "team onboarding" }
+        ]
+      },
+      "distributor-automation": {
+        "client": "Electronics distributor",
+        "industry": "Wholesale · 50+ people",
+        "timeline": "8 weeks to first release",
+        "problem": "Orders came into 1C, logistics lived in Excel, client notifications went out manually from Telegram. Between the systems - copy-paste and lost rows.",
+        "approach": [
+          "Built a layer between 1C and ops via webhooks",
+          "Shipped a single admin: order → status → delivery → feedback",
+          "Automatic client notifications (SMS + email) per status",
+          "Real-time dashboard for revenue and overdue items"
+        ],
+        "outcome": "The ops team stopped working evenings. Errors between 1C and logistics dropped to a handful per month.",
+        "metrics": [
+          { "value": "−70%", "label": "manual actions" },
+          { "value": "2.5×", "label": "order processing speed" },
+          { "value": "0", "label": "lost orders per quarter" }
+        ]
+      },
+      "services-crm": {
+        "client": "Services company",
+        "industry": "B2B services · branched franchise network",
+        "timeline": "10 weeks + growth retainer",
+        "problem": "20+ branches tracked clients in different spreadsheets. Central office saw numbers with a week's delay; quarterly reports were assembled by hand from emails.",
+        "approach": [
+          "Unified CRM with roles: branch / region / central office",
+          "Row-level security so branches don't see each other's clients",
+          "Accounting sync - invoices and acts generated automatically",
+          "Live dashboard for leadership, filterable by region"
+        ],
+        "outcome": "Central office sees the state of the whole network in real time. Quarterly reports take 5 minutes instead of 3 days.",
+        "metrics": [
+          { "value": "real-time", "label": "vs weekly reports" },
+          { "value": "99.2%", "label": "uptime over 6 months" },
+          { "value": "−3 days", "label": "to assemble quarterly reports" }
+        ]
+      },
+      "saas-startup": {
+        "client": "SaaS startup",
+        "industry": "Education · MVP → first 1,000 users",
+        "timeline": "12 weeks MVP + support",
+        "problem": "Founders knew the market but had no technical team. They needed a working MVP to go to investors - not a \"prototype on their knees\" but a product that could actually carry the first customers.",
+        "approach": [
+          "Fast discovery - picked 3 core features for the MVP and cut the rest",
+          "Stripe for subscriptions, OAuth + magic link for sign-in",
+          "Multi-tenant and role groundwork so no rewrite after the raise",
+          "Sentry + analytics from day one"
+        ],
+        "outcome": "The MVP carried the first user wave without incidents. The founders went to investors with a live product, not slides.",
+        "metrics": [
+          { "value": "12 weeks", "label": "from idea to launch" },
+          { "value": "1,000+", "label": "first users" },
+          { "value": "< 0.1%", "label": "Sentry error rate" }
+        ]
+      }
+    }
+  },
+  "projects": {
+    "metadata": {
+      "title": "Projects",
+      "description": "Our own SaaS products and client projects: from a tender CRM to business-process automation."
+    },
+    "hero": {
+      "eyebrow": "Projects",
+      "titlePre": "Everything we've",
+      "titleAccent": "shipped to production",
+      "description": "Our own SaaS products and client projects. Each one is live, with real users and real metrics.",
+      "breadcrumb": "Projects"
+    },
+    "statusLabels": {
+      "live": "Live",
+      "inProgress": "In progress",
+      "planned": "Planned"
+    },
+    "plannedNote": "Release later in 2026",
+    "actions": {
+      "openSite": "Open site",
+      "detailCase": "Full case"
+    },
+    "items": {
+      "tendercrm": {
+        "name": "TenderCRM",
+        "tagline": "Tender management and margin calculation",
+        "description": "SaaS platform for tender lot tracking, AI doc parsing, profit calculation and procurement analytics. BAI Core's first own product."
+      },
+      "bi": {
+        "name": "BI dashboard",
+        "tagline": "Dashboards for mid-sized businesses",
+        "description": "A single data storefront with sales / ops / finance dashboards. For companies outgrowing Excel."
+      },
+      "flowops": {
+        "name": "FlowOps",
+        "tagline": "Process automation platform",
+        "description": "Low-code scenario editor with integrations to 1C, Kaspi, Telegram, Gmail. For ops and accounting teams."
+      },
+      "custom": {
+        "name": "Client projects",
+        "tagline": "Custom development",
+        "description": "Alongside our own SaaS we run individual client projects: internal CRMs, ERPs, marketplaces. NDA-covered, so shown on request."
+      }
+    },
+    "githubNudge": {
+      "heading": "Want your own SaaS like TenderCRM?",
+      "description": "We can repeat the path - for your market. First demo two weeks after discovery.",
+      "cta": "Discuss the idea",
+      "github": "GitHub"
+    },
+    "detail": {
+      "metadata": {
+        "title": "TenderCRM - case study",
+        "description": "How we built a SaaS for tender management with AI doc parsing in 4 months."
+      },
+      "hero": {
+        "eyebrow": "Case · 2026",
+        "titlePre": "TenderCRM -",
+        "titleAccent": "SaaS for tender specialists",
+        "titlePost": "in Kazakhstan",
+        "description": "A deep look at our own product: how in 4 months we went from idea to a working SaaS with an AI parser, multi-tenant architecture and Claude API integration.",
+        "breadcrumb": "TenderCRM",
+        "openButton": "Open tender-crm.vercel.app",
+        "backButton": "All projects"
+      },
+      "stats": {
+        "mvp": { "label": "Time to MVP", "value": "4 mo" },
+        "stack": { "label": "Stack", "value": "Next.js 16" },
+        "db": { "label": "DB", "value": "Supabase" },
+        "ai": { "label": "AI", "value": "Claude Haiku" }
+      },
+      "problem": {
+        "eyebrow": "Task",
+        "headingPre": "Tender specialists track dozens of lots in",
+        "headingAccent": "Excel + WhatsApp",
+        "para1": "In 2026 Kazakhstan's procurement market is 5+ trillion ₸/year via goszakup, Samruk-Qazyna and NADLoC. Thousands of lots, hundreds of players, dozens of tricky rules (tax regimes, VAT, guarantees, penalties).",
+        "para2": "The problem: suppliers track everything by hand. 200-column Excel sheets, margin calculated \"on a napkin,\" statuses in a WhatsApp chat. Half the deals end up in the red - but they only find out at quarter-end."
+      },
+      "solution": {
+        "eyebrow": "Solution",
+        "headingPre": "A unified SaaS platform with an",
+        "headingAccent": "AI assistant",
+        "features": {
+          "ai": {
+            "title": "AI parses docs in 3 sec",
+            "text": "Upload a PDF or DOCX - Claude extracts 20+ fields: amount, deadlines, customer, category. Used to take 15 minutes."
+          },
+          "calc": {
+            "title": "Profit calculator",
+            "text": "All 6 KZ tax regimes, 12% VAT, logistics, guarantees - all factored in. You see the real margin before submitting a bid."
+          },
+          "multiTenant": {
+            "title": "Multi-tenant with RLS",
+            "text": "Each client's data is isolated at the Postgres level. Row Level Security + audit log on every change."
+          }
+        }
+      },
+      "stack": {
+        "eyebrow": "Stack",
+        "heading": "Chosen technologies",
+        "description": "Every choice is justified. We took what works and passed on anything that adds complexity without payoff.",
+        "items": {
+          "next": { "name": "Next.js 16 + React 19", "reason": "App Router, RSC, Turbopack. Great DX and performance out of the box." },
+          "ts": { "name": "TypeScript strict", "reason": "In SaaS, typos are expensive. Strict types catch bugs before compile." },
+          "supabase": { "name": "Supabase", "reason": "Postgres + Auth + Realtime + RLS. No custom auth service." },
+          "claude": { "name": "Claude Haiku 4.5", "reason": "Cheap, fast, great at parsing Russian and Kazakh documents." },
+          "redis": { "name": "Upstash Redis", "reason": "Serverless rate-limit. Protects login from brute-force." },
+          "sentry": { "name": "Sentry + Vercel Analytics", "reason": "Out-of-the-box observability: errors, performance, Web Vitals." },
+          "playwright": { "name": "Playwright E2E", "reason": "Critical flows checked on every PR before merge." },
+          "tailwind": { "name": "Tailwind v4 + shadcn-style", "reason": "A custom design system - not an off-the-shelf library." }
+        }
+      },
+      "results": {
+        "eyebrow": "Outcome",
+        "heading": "Production-ready in 4 months",
+        "description": "A full SaaS with auth, multi-tenant, billing, AI, analytics, export and CI/CD. Ready for paying customers.",
+        "cta": "See TenderCRM"
+      }
+    }
+  },
+  "contacts": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Get in touch with BAI Core - IT-solution development in Astana. Tell us the task and we'll share references."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "titlePre": "Tell us about the task -",
+      "titleAccent": "we'll discuss",
+      "titlePost": "within hours",
+      "description": "30 minutes of free discovery: we discuss the task, show references, estimate timeline and cost. If it isn't our profile - we'll honestly point you to someone better placed.",
+      "breadcrumb": "Contact"
+    },
+    "directContact": {
+      "label": "Direct contact",
+      "phoneLabel": "Phone",
+      "phoneHint": "Consultations - faster than email",
+      "emailLabel": "Email",
+      "officeLabel": "Office",
+      "officeHint": "Meetings by appointment · remote-first",
+      "responseLabel": "Response time",
+      "responseValue": "Within 4 business hours",
+      "responseHours": "Mon-Fri · 10:00-19:00 (Asia/Almaty)"
+    },
+    "nextSteps": {
+      "label": "What happens next",
+      "stepPrefix": "STEP",
+      "items": {
+        "reply": {
+          "title": "We reply within 4 hours",
+          "text": "We clarify details and send prep questions for the call."
+        },
+        "call": {
+          "title": "30-minute discovery call",
+          "text": "Zoom / Google Meet / Telegram. Free."
+        },
+        "proposal": {
+          "title": "Proposal + NDA",
+          "text": "Scope, cost, timeline. We sign an NDA if the data is sensitive."
+        }
+      }
+    },
+    "legal": {
+      "label": "Legal details",
+      "binValue": "provided when the contract is signed",
+      "countryValue": "Republic of Kazakhstan",
+      "paymentValue": "Kaspi Bank JSC, Halyk Bank JSC, BKG"
+    },
+    "faqIntro": "If the answer isn't here - use the form above or drop us an email."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How much does SaaS development cost?",
+        "a": "From 2,500,000 ₸ for an MVP (8-12 weeks). Exact quote after the discovery call - depends on scope, integrations and load. Payment is milestoned 30/30/40 on two-week sprints."
+      },
+      {
+        "q": "Fixed price or T&M?",
+        "a": "Both. MVPs and clearly scoped products - fixed. Long-running teams on the client side - T&M with weekly reporting. Discovery is always included for free."
+      },
+      {
+        "q": "Which stacks do you work in?",
+        "a": "Next.js / React / TypeScript on the front, Node / Python / Go on the back, PostgreSQL / Supabase / Neon for data, Vercel / Railway / Cloudflare for infra. AI - Claude API, OpenAI, on-prem models on request."
+      },
+      {
+        "q": "Do you sign NDAs?",
+        "a": "Yes, before exchanging sensitive documents. Our template or yours - doesn't matter. The contract also carries standard confidentiality and IP clauses."
+      },
+      {
+        "q": "Who owns the source code?",
+        "a": "The client - after acceptance and full payment of the milestone. Code, CI/CD configs, documentation and deploy rights are transferred to your GitHub / GitLab / Bitbucket."
+      },
+      {
+        "q": "How do you handle data and security?",
+        "a": "Least-privilege by default: dev / staging / prod are isolated. Secrets live only in a password manager, never in the repo. For fintech and medical data - RLS, column-level encryption, access audit."
+      },
+      {
+        "q": "Is there post-launch support?",
+        "a": "Yes. Server-level SLA 99.5%, critical-incident response within 2 hours, quarterly code reviews and dependency updates. Cost - 10-15% of the development fee per year."
+      },
+      {
+        "q": "Can we hire only a tech lead / architect?",
+        "a": "Yes - IT consulting and technical leadership without development. Vendor oversight, code review, interviews, retros, roadmap. From 40 hours / month."
+      }
+    ]
+  },
+  "careers": {
+    "metadata": {
+      "title": "Careers",
+      "description": "Careers at BAI Core - openings for engineers and designers. Remote or Astana-based, product teams, competitive terms."
+    },
+    "hero": {
+      "eyebrow": "Careers",
+      "titlePre": "Strong products are made by",
+      "titleAccent": "strong teams",
+      "description": "We're a small team of 8 that values craft, honest feedback and work worth being proud of. If that sounds like you - drop us a line.",
+      "breadcrumb": "Careers"
+    },
+    "benefits": [
+      {
+        "title": "Remote work",
+        "text": "Fully distributed team. Visiting the Astana office is optional - roughly once a quarter for an offsite."
+      },
+      {
+        "title": "Salary in ₸ with indexation",
+        "text": "Reviewed every 6 months based on performance. Release bonus - up to 2 salaries per year."
+      },
+      {
+        "title": "Gear and software",
+        "text": "MacBook Pro or equivalent, all subscriptions (JetBrains, Figma, Linear), courses and conferences - on the company."
+      },
+      {
+        "title": "Learning",
+        "text": "500,000 ₸ / year budget for courses, books and certifications. Quarterly internal tech talk."
+      }
+    ],
+    "jobsHeading": "Open positions",
+    "jobsOpen": "{count} open",
+    "applyCta": "Apply",
+    "detailsToggle": "Details →",
+    "responsibilitiesLabel": "RESPONSIBILITIES",
+    "requirementsLabel": "REQUIREMENTS",
+    "niceLabel": "NICE TO HAVE",
+    "remoteBadge": "Remote",
+    "empty": {
+      "title": "No open positions right now",
+      "description": "But we're always glad to hear from strong candidates. Reach out - we'll tell you about upcoming roles.",
+      "cta": "Send CV"
+    },
+    "openCall": {
+      "eyebrow": "Didn't find a fitting role?",
+      "heading": "Reach out - if you're strong, we'll find a spot",
+      "cta": "Open application"
+    },
+    "jobs": {
+      "senior-fullstack-engineer": {
+        "title": "Senior Fullstack Engineer",
+        "location": "Astana / remote (RU/KZ tz)",
+        "salary": "from 1,200,000 ₸ / month",
+        "summary": "Leading client products and internal SaaS on the Next.js / Supabase / TypeScript stack. Architecture, review, release ownership.",
+        "responsibilities": [
+          "Design and implement features end-to-end - from DB schema to UI",
+          "Review team PRs and set technical standards",
+          "Join client discovery sessions, scope and estimate",
+          "See releases through to production (Vercel / Railway / Cloudflare)"
+        ],
+        "requirements": [
+          "4+ years of commercial TypeScript development",
+          "Next.js 14+ / React 18+ in production",
+          "PostgreSQL - confident with indexes, transactions, RLS",
+          "Experience shipping features end-to-end without micromanagement",
+          "Russian C1+, English B2+ (technical writing)"
+        ],
+        "nice": [
+          "Experience with Claude API / LLM inference",
+          "DevOps - IaC, observability, incident response",
+          "Product-startup experience"
+        ]
+      },
+      "product-designer": {
+        "title": "Product Designer (UI/UX)",
+        "location": "Astana / remote",
+        "salary": "from 800,000 ₸ / month",
+        "summary": "Designing SaaS products from research to the final Figma file handed to engineering. Includes brand and marketing work.",
+        "responsibilities": [
+          "Run the design process for client and internal products",
+          "UX-review existing interfaces",
+          "Maintain and grow the design system",
+          "Prepare handoff for engineers (Figma + Storybook)"
+        ],
+        "requirements": [
+          "3+ years designing SaaS / dashboard interfaces",
+          "Portfolio of shipped work (not concept work)",
+          "Confident Figma with auto-layout and variables",
+          "Basic HTML/CSS so you speak the same language as engineers"
+        ]
+      }
+    }
+  },
+  "changelog": {
+    "metadata": {
+      "title": "Changelog",
+      "description": "What's new at BAI Core and in our products. We ship releases, improvements and fixes in public."
+    },
+    "hero": {
+      "eyebrow": "Changelog",
+      "titlePre": "What's new at",
+      "titleAccent": "BAI Core",
+      "description": "We share releases, improvements and fixes in the open. Subscribe to RSS - updates without a newsletter.",
+      "breadcrumb": "Changelog"
+    },
+    "empty": "Nothing here yet. Releases are coming soon.",
+    "kinds": {
+      "feature": "Feature",
+      "improvement": "Improvement",
+      "fix": "Fix",
+      "release": "Release"
+    }
+  },
+  "status": {
+    "metadata": {
+      "title": "System status",
+      "description": "Live status of BAI Core infrastructure: site, API, email, database."
+    },
+    "hero": {
+      "eyebrow": "Status",
+      "titlePre": "All systems",
+      "titleAccent": "are operating normally",
+      "description": "Public infrastructure status. Data refreshes every minute. If you've spotted an incident - email info@baicore.kz.",
+      "breadcrumb": "Status"
+    },
+    "summary": {
+      "operational": "All systems operating normally",
+      "degraded": "Partial degradation",
+      "down": "Incident: some systems are down",
+      "lastCheck": "Last check"
+    },
+    "statusLabels": {
+      "operational": "Operational",
+      "degraded": "Degraded",
+      "down": "Down"
+    },
+    "components": {
+      "site": {
+        "name": "baicore.kz (site)",
+        "description": "Public site, contact form, blog"
+      },
+      "contactApi": {
+        "name": "Contact API",
+        "description": "Form submissions, rate limit, CAPTCHA"
+      },
+      "email": {
+        "name": "Email (Resend)",
+        "description": "Notification and confirmation delivery"
+      },
+      "tendercrm": {
+        "name": "TenderCRM",
+        "description": "SaaS product for tender management"
+      }
+    },
+    "transparencyNote": {
+      "strong": "Incident transparency:",
+      "textPre": "we publish major incidents to the",
+      "linkLabel": "changelog",
+      "textPost": "with a postmortem within 48 hours of recovery."
+    }
+  },
+  "error500": {
+    "title": "Something went wrong",
+    "description": "We've been notified. Try refreshing the page or head back home.",
+    "retry": "Retry",
+    "backHome": "Home",
+    "codeLabel": "code:"
+  },
+  "blog": {
+    "metadata": {
+      "title": "Blog",
+      "description": "Technical breakdowns, cases and notes on IT and business automation in Kazakhstan."
+    },
+    "hero": {
+      "eyebrow": "Blog",
+      "titlePre": "Breakdowns, cases and notes on",
+      "titleAccent": "code, automation and data",
+      "description": "We write about what we do: Postgres, Next.js, process automation, security, AI integrations. No filler - only the practice that works.",
+      "breadcrumb": "Blog"
+    },
+    "postsCount": "{count} articles",
+    "rss": "RSS",
+    "featured": "New article",
+    "archiveEyebrow": "All posts",
+    "archiveHeading": "Archive",
+    "filterAll": "All",
+    "filterEmpty": "No posts in this category yet.",
+    "empty": {
+      "text": "No published articles yet. The first ones are coming soon.",
+      "cta": "Reach out"
+    },
+    "card": {
+      "readCta": "Read",
+      "readMinSuffix": "min"
+    },
+    "post": {
+      "back": "Blog",
+      "readMinSuffix": "min read",
+      "tagsLabel": "Tags",
+      "authorEyebrow": "About the team",
+      "authorCompany": "BAI Core",
+      "authorBio": "We build SaaS products and automate business processes in Kazakhstan. If this article was useful - tell us what you'd like to read next.",
+      "authorDiscussCta": "Discuss a task",
+      "authorAboutCta": "About us",
+      "relatedEyebrow": "Related",
+      "relatedHeadingPre": "More from",
+      "relatedAllCta": "All articles",
+      "notFound": "Article not found",
+      "translationNotice": "An English version of this article is still being prepared. For now we're showing the Russian original."
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "lastUpdatedPrefix": "Last updated:",
+    "kzNotice": "",
+    "privacy": {
+      "metadata": {
+        "title": "Privacy Policy",
+        "description": "How BAI CORE LLP processes and protects personal data."
+      },
+      "title": "Privacy Policy",
+      "updated": "April 19, 2026",
+      "intro": "BAI CORE LLP (hereinafter, the \"Company\") respects the confidentiality of your data. This Policy governs the collection, storage and use of personal data in accordance with the Law of the Republic of Kazakhstan \"On Personal Data and its Protection\" of 21 May 2013, No. 94-V.",
+      "s1h": "1. What data we collect",
+      "s1p1": "1.1. Contact details submitted via the form: name, email, company, message text.",
+      "s1p2": "1.2. Technical data: IP address, User-Agent, device type, pages visited - used solely for security and anonymous analytics.",
+      "s1p3": "1.3. Cookies - strictly necessary and analytics (with consent).",
+      "s2h": "2. Purposes of processing",
+      "s2l1": "Replying to your request",
+      "s2l2": "Preparing a commercial proposal",
+      "s2l3": "Improving the quality of the website",
+      "s2l4": "Ensuring security (DDoS and bot protection)",
+      "s3h": "3. Sharing with third parties",
+      "s3p1Prefix": "3.1. We",
+      "s3p1NotSell": "do not sell",
+      "s3p1And": "and",
+      "s3p1NotShare": "do not share",
+      "s3p1Suffix": "data with third parties for marketing purposes.",
+      "s3p2": "3.2. Technical sub-processors (Vercel, Resend, Sentry, Supabase) only access the technical data strictly required to operate the service.",
+      "s4h": "4. Storage and protection",
+      "s4p1": "4.1. Data is stored in cloud services with encryption (TLS/SSL in transit, AES-256 at rest).",
+      "s4p2": "4.2. Retention period is no more than 3 years after the last contact, unless longer retention is required by law.",
+      "s4p3": "4.3. Administrative access is protected by two-factor authentication.",
+      "s5h": "5. Your rights",
+      "s5l1": "Right to request a copy of your data",
+      "s5l2": "Right to correct inaccurate data",
+      "s5l3": "Right to erasure",
+      "s5l4": "Right to withdraw consent at any time",
+      "s6h": "6. Personal-data enquiries",
+      "s6pPrefix": "For matters related to the processing of personal data:"
+    },
+    "terms": {
+      "metadata": {
+        "title": "Terms of Service",
+        "description": "Terms of use for baicore.kz."
+      },
+      "title": "Terms of Service",
+      "updated": "April 19, 2026",
+      "s1h": "1. General provisions",
+      "s1pPrefix": "These Terms of Service govern use of the",
+      "s1pDomain": "baicore.kz",
+      "s1pSuffix": " website owned by BAI CORE LLP (hereinafter, the \"Company\"). By using the website, you confirm your agreement with these Terms.",
+      "s2h": "2. Scope",
+      "s2p1": "2.1. The website is an informational resource of the Company and contains descriptions of services, products and case studies.",
+      "s2p2": "2.2. The website is not a public offer. Concrete terms of engagement are set out in a separate contract.",
+      "s3h": "3. Intellectual property",
+      "s3p1": "3.1. All site materials (texts, design, code, logos) are protected by copyright and belong to the Company.",
+      "s3p2": "3.2. Any use of these materials requires the Company's prior written consent.",
+      "s4h": "4. Liability",
+      "s4p1": "4.1. Information on the website is provided on an \"as is\" basis and may be updated without notice.",
+      "s4p2": "4.2. The Company is not responsible for decisions made on the basis of website information without prior consultation.",
+      "s5h": "5. Feedback",
+      "s5pPrefix": "By submitting the contact form you consent to the processing of personal data in accordance with our",
+      "s5pLink": "Privacy Policy",
+      "s5pSuffix": ".",
+      "s6h": "6. Changes",
+      "s6p": "The Company reserves the right to amend these Terms. The current version is always available on this page.",
+      "s7h": "7. Contact",
+      "s7pPrefix": "For questions about these Terms:"
+    },
+    "cookies": {
+      "metadata": {
+        "title": "Cookie Notice",
+        "description": "How and why baicore.kz uses cookies."
+      },
+      "title": "Cookie Notice",
+      "updated": "April 19, 2026",
+      "s1h": "1. What a cookie is",
+      "s1p": "Cookies are small text files your browser stores on your device. They are used to run the site (sessions, preferences) and for analytics.",
+      "s2h": "2. Which cookies we use",
+      "s2l1Bold": "Strictly necessary",
+      "s2l1Suffix": "- run the site, theme selection, language. Cannot be disabled.",
+      "s2l2Bold": "Analytics",
+      "s2l2Suffix": "- Vercel Analytics (no personal data). Enabled only with your consent.",
+      "s2l3Bold": "Functional",
+      "s2l3Suffix": "- remember your preferences (e.g. font size, language choice). Enabled with your consent.",
+      "s3h": "3. Third-party cookies",
+      "s3p": "Embedded elements (maps, video) may set their own cookies. The site does not control them - see the respective providers' policies for details.",
+      "s4h": "4. Managing cookies",
+      "s4p": "You can disable cookies in your browser settings. Note that some features of the site may not work correctly as a result.",
+      "s5h": "5. Contact",
+      "s5pPrefix": "For cookie-related questions:"
+    }
+  },
+  "badges": {
+    "companyBase": "BAI CORE LLP · Astana",
+    "acceptingProjects": "Accepting new projects",
+    "live": "Live",
+    "inProgress": "In progress",
+    "planned": "Planned"
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "notFoundDescription": "The URL may have changed or this page is still under construction.",
+    "backHome": "Back to home"
+  }
+}

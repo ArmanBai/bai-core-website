@@ -1,0 +1,167 @@
+---
+title: "Multi-tenant в Supabase: RLS на практике"
+excerpt: "Как разделить данные клиентов на одном Postgres без костылей - с политиками, триггерами и тестами."
+category: "Security"
+date: "2026-03-14"
+readMin: 10
+author: "BAI Core"
+cover: "emerald-cyan"
+coverImage: "/blog/rls-multi-tenant.jpg"
+tags: ["supabase", "postgres", "rls", "security"]
+---
+
+Когда строишь SaaS, один из первых вопросов: **как изолировать данные клиентов?** Три популярных подхода:
+
+1. **Schema-per-tenant** - у каждого клиента свой Postgres-schema. Хорошо для крупных enterprise, но дорого на старте.
+2. **Database-per-tenant** - отдельная база на клиента. Максимум изоляции, максимум боли в управлении.
+3. **Row-Level Security (RLS)** - одна база, одна schema, но каждая строка принадлежит кому-то. Postgres сам фильтрует.
+
+Для большинства B2B SaaS правильный ответ - **RLS**. Дёшево, безопасно, масштабируется до тысяч тенантов. Разберём, как это сделать в Supabase.
+
+## Шаг 1. Добавляем `user_id` на каждую таблицу
+
+```sql
+ALTER TABLE lots ADD COLUMN user_id uuid NOT NULL
+  REFERENCES auth.users(id) ON DELETE CASCADE;
+
+CREATE INDEX idx_lots_user_id ON lots (user_id);
+```
+
+<Callout type="warn" title="NOT NULL - критично">
+Без `NOT NULL` можно случайно вставить строку без `user_id`, и RLS-политика пропустит
+её для всех. Это утечка. Делайте `NOT NULL` с самого начала.
+</Callout>
+
+## Шаг 2. Включаем RLS
+
+```sql
+ALTER TABLE lots ENABLE ROW LEVEL SECURITY;
+```
+
+После этой команды **все запросы без политики вернут пустой результат** - даже для supabase-admin. Осторожно на проде: сначала политики, потом `ENABLE`.
+
+## Шаг 3. Пишем политики
+
+Четыре операции - четыре политики (или одна `FOR ALL`):
+
+```sql
+CREATE POLICY "select_own_lots" ON lots
+  FOR SELECT TO authenticated
+  USING (user_id = auth.uid());
+
+CREATE POLICY "insert_own_lots" ON lots
+  FOR INSERT TO authenticated
+  WITH CHECK (user_id = auth.uid());
+
+CREATE POLICY "update_own_lots" ON lots
+  FOR UPDATE TO authenticated
+  USING (user_id = auth.uid())
+  WITH CHECK (user_id = auth.uid());
+
+CREATE POLICY "delete_own_lots" ON lots
+  FOR DELETE TO authenticated
+  USING (user_id = auth.uid());
+```
+
+**`USING`** - фильтр при чтении (кого вижу).
+**`WITH CHECK`** - проверка при записи (что могу вставить).
+
+Самая частая ошибка - забыть `WITH CHECK` на UPDATE. Без него клиент может поменять
+`user_id` на чужой и «передать» строку.
+
+## Шаг 4. Защищаем от «забыли user_id в INSERT»
+
+Если клиентский код забудет проставить `user_id`, INSERT провалится (ввиду `WITH CHECK`). Но есть опция проще - триггер, который автопроставляет из сессии:
+
+```sql
+CREATE OR REPLACE FUNCTION set_user_id_on_insert()
+RETURNS trigger AS $$
+BEGIN
+  IF NEW.user_id IS NULL THEN
+    NEW.user_id := auth.uid();
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER trg_lots_set_user_id
+  BEFORE INSERT ON lots
+  FOR EACH ROW EXECUTE FUNCTION set_user_id_on_insert();
+```
+
+## Шаг 5. Soft delete + RLS
+
+Популярный паттерн - не удалять данные, а ставить `deleted_at`. Чтобы soft-deleted строки не появлялись в UI, запекаем фильтр прямо в RLS:
+
+```sql
+CREATE POLICY "select_active_lots" ON lots
+  FOR SELECT TO authenticated
+  USING (user_id = auth.uid() AND deleted_at IS NULL);
+```
+
+Теперь любой `SELECT * FROM lots` вернёт только живые строки этого юзера. Никаких
+`.is('deleted_at', null)` в каждом запросе приложения.
+
+## Шаг 6. Тесты политики
+
+RLS без тестов - как пароль без 2FA: вроде есть, но толку ноль. Пишите E2E на `pgTap`
+или хотя бы скрипт:
+
+```sql
+-- Логинимся как user A, создаём лот
+SET request.jwt.claims TO '{"sub":"user-a"}';
+INSERT INTO lots (title) VALUES ('A''s secret') RETURNING id;
+
+-- Логинимся как user B, пробуем увидеть
+SET request.jwt.claims TO '{"sub":"user-b"}';
+SELECT * FROM lots; -- Должно вернуть 0 строк
+
+-- B пробует обновить A-лот
+UPDATE lots SET title = 'stolen' WHERE id = <A's id>;
+-- Должно вернуть "UPDATE 0"
+```
+
+<Callout type="success" title="Чеклист перед выкатом RLS в прод">
+- [ ] `NOT NULL` на `user_id` всех тенантных таблиц
+- [ ] `ENABLE ROW LEVEL SECURITY` везде
+- [ ] Политики на SELECT / INSERT / UPDATE / DELETE
+- [ ] `WITH CHECK` на UPDATE
+- [ ] Soft delete в `USING` если применимо
+- [ ] Тесты, симулирующие «другого юзера»
+- [ ] Admin-роль обходит RLS только через service_role ключ (не public)
+</Callout>
+
+## Что делать с foreign keys между тенантами
+
+Есть связанные таблицы - например `lot_results` ссылается на `lots`. RLS на `lot_results`:
+
+```sql
+CREATE POLICY "select_own_results" ON lot_results
+  FOR SELECT TO authenticated
+  USING (
+    user_id = auth.uid()
+    AND EXISTS (
+      SELECT 1 FROM lots
+      WHERE lots.id = lot_results.lot_id
+        AND lots.user_id = auth.uid()
+    )
+  );
+```
+
+Дополнительная проверка через `EXISTS` защищает от ситуации, где у кого-то получится вставить `lot_result` со своим `user_id`, но чужим `lot_id`.
+
+## Производительность
+
+RLS применяется как дополнительный фильтр к `WHERE`. Если на `user_id` есть индекс - почти бесплатно. Если нет - Postgres будет делать `Seq Scan` на каждый запрос.
+
+```sql
+-- Обязательно для multi-tenant
+CREATE INDEX idx_lots_user_id_created_at
+  ON lots (user_id, created_at DESC);
+```
+
+## Вывод
+
+RLS - это не волшебная галочка, а полноценная архитектурная практика. Делайте её
+частью каждого `CREATE TABLE` с первого дня. Мы в <a href="/projects/tendercrm">TenderCRM</a>
+пишем RLS в той же миграции, что и саму таблицу - иначе забудется.

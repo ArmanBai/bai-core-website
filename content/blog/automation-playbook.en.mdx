@@ -1,0 +1,126 @@
+---
+title: "An automation playbook for Kazakhstan's mid-sized businesses"
+excerpt: "Where to start with automation, how to pick the right tool, and how to calculate ROI on real examples."
+category: "Automation"
+date: "2026-03-28"
+readMin: 12
+author: "BAI Core"
+cover: "violet-fuchsia"
+coverImage: "/blog/automation-playbook.jpg"
+tags: ["automation", "business", "kazakhstan"]
+---
+
+"Automate your business" sounds like a mantra, but in practice 70% of automation projects fail: either the tool doesn't fit the process, no one maintains it after rollout, or the savings are smaller than the cost.
+
+This playbook is our experience rolling out automation at 20+ companies in Kazakhstan. Here's what actually works.
+
+## Step 1. Which processes to automate first
+
+Simple formula:
+
+> **Automation ROI = (hours × rate × 12 months) − implementation and support cost**
+
+Good first-wave candidates:
+
+- **Repeating** - happens ≥10 times per week
+- **Predictable** - clear rules (if-then)
+- **Painful** - currently done by hand, with errors
+- **Measurable** - you can count time/money before vs after
+
+Bad candidates (don't start with these):
+
+- Rare events (once a quarter)
+- Lots of exceptions
+- Require subjective judgement
+- Touch many departments on day one
+
+## Step 2. Three levels of automation
+
+### Level 1. No-code integrations (Zapier, n8n, Make)
+
+Good for:
+
+```text
+Action in system A → notification/record in system B
+```
+
+Examples:
+
+- New customer in Kaspi → CRM card + Telegram to a chat
+- Payment in 1C → email to the client with the receipt
+- Missed call → task assigned to the account manager
+
+**Cost:** from $20/month, rollout in days.
+
+<Callout type="info" title="When it stops being enough">
+No-code hits a wall past ~20 scenarios, or when you need complex branching logic,
+or custom API calls. Then - level 2.
+</Callout>
+
+### Level 2. Custom Node.js / Python pipelines
+
+When no-code becomes a spaghetti of 30 Zaps nobody understands anymore.
+
+Move to managed code:
+
+```typescript
+// Example: auto-invoice after payment
+export async function handlePayment(payment: Payment) {
+  const invoice = await generateInvoice(payment);
+  await storeInDb(invoice);
+  await sendEmailWithPdf(payment.clientEmail, invoice);
+  await notifyTelegram(invoice);
+  await syncTo1C(invoice);
+}
+```
+
+**Upsides:**
+- A single git repo - the whole business process is visible
+- Tests, types, code review
+- No limits on the number of runs
+
+**Cost:** 2-6 weeks of dev + hosting.
+
+### Level 3. Your own platform
+
+When you have 10+ processes, 5+ departments, and need an admin panel and roles. That's an internal SaaS.
+
+Example - we built one for a logistics client: document flow, warehouse, bank integration, fuel accounting. Vendors like 1C + SAP didn't fit on price and flexibility.
+
+## Step 3. Success metrics
+
+Lock in a baseline before rollout:
+
+| Metric | Before | Goal | How we measure |
+|--------|--------|------|----------------|
+| Order-processing time | 2 h | 15 min | CRM log |
+| Document error rate | 8% | &lt;1% | Monthly audit |
+| Cost per order | ₸2,000 | ₸400 | Salary / order count |
+| Client response time | 4 h | 30 min | First-response metric |
+
+30 days after rollout - check. If the numbers aren't there, figure out why.
+
+## Step 4. Common mistakes
+
+<Callout type="warn" title="Automating a bad process">
+Before rolling anything out, re-read the as-is process. If it's crooked - fix it first,
+then automate. Otherwise you'll just make mistakes faster.
+</Callout>
+
+**Other gotchas:**
+
+- No rollout owner - the whole thing rots a month later
+- No documentation - when someone leaves, no one can maintain it
+- Skipping monitoring - you hear about outages from clients a week later
+- Missing edge cases - "what if the customer clicks pay twice?"
+
+## Takeaway
+
+Automation isn't an IT project, it's a product project. You need to:
+
+1. Understand the process first
+2. Pick the right level of complexity (don't write code if Zapier is enough)
+3. Measure before and after
+4. Assign an owner and write documentation
+
+At <a href="/contacts">BAI Core</a> we help with all three levels - from the first integrations to a fully-fledged internal platform.

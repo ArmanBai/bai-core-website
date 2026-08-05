@@ -1,0 +1,58 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stroke { stroke: #22d3ee; }
+    .fill { fill: #22d3ee; }
+  </style>
+  <g class="stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M35 10 L35 24 L28 31"/>
+    <path d="M50 6 L50 22 L46 26"/>
+    <path d="M60 4 L60 22"/>
+    <path d="M70 6 L70 22 L74 26"/>
+    <path d="M85 10 L85 24 L92 31"/>
+    <path d="M110 35 L96 35 L89 28"/>
+    <path d="M116 50 L98 50 L94 46"/>
+    <path d="M116 60 L98 60"/>
+    <path d="M116 70 L98 70 L94 74"/>
+    <path d="M110 85 L96 85 L89 92"/>
+    <path d="M85 110 L85 96 L92 89"/>
+    <path d="M70 114 L70 98 L74 94"/>
+    <path d="M60 116 L60 98"/>
+    <path d="M50 114 L50 98 L46 94"/>
+    <path d="M35 110 L35 96 L28 89"/>
+    <path d="M10 85 L24 85 L31 92"/>
+    <path d="M4 70 L22 70 L26 74"/>
+    <path d="M4 60 L22 60"/>
+    <path d="M4 50 L22 50 L26 46"/>
+    <path d="M10 35 L24 35 L31 28"/>
+  </g>
+  <g class="fill">
+    <circle cx="35" cy="8" r="2.5"/>
+    <circle cx="50" cy="4" r="2.5"/>
+    <circle cx="60" cy="2" r="2.5"/>
+    <circle cx="70" cy="4" r="2.5"/>
+    <circle cx="85" cy="8" r="2.5"/>
+    <circle cx="112" cy="35" r="2.5"/>
+    <circle cx="118" cy="50" r="2.5"/>
+    <circle cx="118" cy="60" r="2.5"/>
+    <circle cx="118" cy="70" r="2.5"/>
+    <circle cx="112" cy="85" r="2.5"/>
+    <circle cx="85" cy="112" r="2.5"/>
+    <circle cx="70" cy="116" r="2.5"/>
+    <circle cx="60" cy="118" r="2.5"/>
+    <circle cx="50" cy="116" r="2.5"/>
+    <circle cx="35" cy="112" r="2.5"/>
+    <circle cx="8" cy="85" r="2.5"/>
+    <circle cx="2" cy="70" r="2.5"/>
+    <circle cx="2" cy="60" r="2.5"/>
+    <circle cx="2" cy="50" r="2.5"/>
+    <circle cx="8" cy="35" r="2.5"/>
+  </g>
+  <rect x="28" y="28" width="64" height="64" rx="8" stroke="#22d3ee" stroke-width="2.5" fill="none"/>
+  <g fill="#22d3ee">
+    <rect x="32" y="32" width="4" height="4" rx="0.5"/>
+    <rect x="84" y="32" width="4" height="4" rx="0.5"/>
+    <rect x="32" y="84" width="4" height="4" rx="0.5"/>
+    <rect x="84" y="84" width="4" height="4" rx="0.5"/>
+  </g>
+  <text x="60" y="70" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="800" fill="#ffffff" letter-spacing="-1">BA<tspan font-size="22">i</tspan></text>
+</svg>
