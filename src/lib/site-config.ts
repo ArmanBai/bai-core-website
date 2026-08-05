@@ -15,14 +15,14 @@ export const siteConfig = {
   url: "https://baicore.kz",
   ogImage: "/og.png",
   locale: "ru_KZ",
-  email: "info@baicore.kz",
+  email: "arman.bai.data@gmail.com",
   phone: "+7 (707) 555-20-62",
   // Machine-friendly form for tel: links. Keep digits only, with leading +.
   phoneHref: "+77075552062",
   city: "Астана, Казахстан",
   socials: {
     linkedin: "https://www.linkedin.com/company/bai-core",
-    github: "https://github.com/artsignstudiokz",
+    github: "https://github.com/ArmanBai",
     instagram: "https://www.instagram.com/baicore.kz",
   },
   nav: [

@@ -1208,7 +1208,7 @@
       "eyebrow": "Status",
       "titlePre": "All systems",
       "titleAccent": "are operating normally",
-      "description": "Public infrastructure status. Data refreshes every minute. If you've spotted an incident - email info@baicore.kz.",
+      "description": "Public infrastructure status. Data refreshes every minute. If you've spotted an incident - email arman.bai.data@gmail.com.",
       "breadcrumb": "Status"
     },
     "summary": {
