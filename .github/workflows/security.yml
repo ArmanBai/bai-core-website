@@ -25,7 +25,7 @@ jobs:
     # Works on private repos without paid plans, unlike CodeQL.
     if: (github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Run Semgrep
         # --exclude-rule: JSON-LD injection for SEO is the canonical Next.js
         # pattern — jsonLd is built server-side from non-user-input post
